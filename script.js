@@ -1,0 +1,1 @@
+console.log("Silly game is loading...");
