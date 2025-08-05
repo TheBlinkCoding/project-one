@@ -4,3 +4,51 @@ body {
   text-align: center;
   padding: 2em;
 }
+#p5-header {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masked-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  mix-blend-mode: screen;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.header-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+  background: transparent;
+}
+
+.header-text h1,
+.header-text p {
+  color: transparent;
+  -webkit-text-stroke: 1px white; /* Outline color */
+  text-transform: uppercase;
+}
+
+.header-text h1 {
+  font-size: 5rem;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* behind .header-text (z-index: 1) */
+}
