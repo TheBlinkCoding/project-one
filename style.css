@@ -1,54 +1,37 @@
 body {
-  font-family: sans-serif;
-  background: #f2f2f2;
-  text-align: center;
-  padding: 2em;
-}
-#p5-header {
-  position: relative;
-  height: 300px;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #000;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: black;
 }
-
-.masked-text {
-  font-size: 5rem;
-  font-weight: bold;
-  color: white;
-  position: absolute;
-  z-index: 2;
-  mix-blend-mode: screen;
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-.header-text {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  padding-top: 100px;
-  background: transparent;
-}
-
-.header-text h1,
-.header-text p {
-  color: transparent;
-  -webkit-text-stroke: 1px white; /* Outline color */
-  text-transform: uppercase;
-}
-
-.header-text h1 {
-  font-size: 5rem;
-}
-
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0; /* behind .header-text (z-index: 1) */
+  z-index: -1;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 200px; /* Match canvas height */
+  position: relative;
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(10, 10, 10, 0.85);
+  -webkit-text-stroke: 3px white;
+  text-align: center;
+  pointer-events: none;
 }
